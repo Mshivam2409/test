@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: Tests
+
+on: 
+  pull_request:
+    types:
+      - "labeled"
+      - "unlabeled"
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v3
+      - id: foo
+        uses: ./
+        with:
+          who-to-greet: 'Mona the Octocat'

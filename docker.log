@@ -1,0 +1,18 @@
+time="2024-04-28T22:28:52+02:00" level=info msg="Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock'"
+[Tests/A job to say hello] 🚀  Start image=ghcr.io/catthehacker/ubuntu:act-latest
+[Tests/A job to say hello]   🐳  docker pull image=ghcr.io/catthehacker/ubuntu:act-latest platform= username= forcePull=true
+[Tests/A job to say hello]   🐳  docker create image=ghcr.io/catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Tests/A job to say hello]   🐳  docker run image=ghcr.io/catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Tests/A job to say hello] ⭐ Run Main actions/checkout@v3
+[Tests/A job to say hello]   🐳  docker cp src=/home/mshivam/workflow-testing/repo/testDockerAction/. dst=/home/mshivam/workflow-testing/repo/testDockerAction
+[Tests/A job to say hello]   ✅  Success - Main actions/checkout@v3
+[Tests/A job to say hello] ⭐ Run Main ./
+[Tests/A job to say hello]   🐳  docker build -t act-dockeraction:latest /home/mshivam/workflow-testing/repo/testDockerAction/
+[Tests/A job to say hello]   🐳  docker pull image=act-dockeraction:latest platform= username= forcePull=false
+[Tests/A job to say hello]   🐳  docker create image=act-dockeraction:latest platform= entrypoint=[] cmd=[] network="container:act-Tests-A-job-to-say-hello-028a06e3257a1d31cfe45bba0443e9ee822996564455615ac994bc5206b1b595"
+[Tests/A job to say hello]   🐳  docker run image=act-dockeraction:latest platform= entrypoint=[] cmd=[] network="container:act-Tests-A-job-to-say-hello-028a06e3257a1d31cfe45bba0443e9ee822996564455615ac994bc5206b1b595"
+[Tests/A job to say hello]   | a = 1
+[Tests/A job to say hello]   | ::notice ::[{'color': '#000000', 'default': False, 'description': 'some label', 'id': 1, 'name': 'product:sandbox', 'node_id': '', 'url': ''}]
+[Tests/A job to say hello]   ✅  Success - Main ./
+[Tests/A job to say hello] Cleaning up container for job A job to say hello
+[Tests/A job to say hello] 🏁  Job succeeded
